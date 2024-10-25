@@ -9,12 +9,10 @@
 
             Console.WriteLine("Ваше имя по букввам: ");
 
-            foreach(var ch in name)
+            for ( int i = name.Length - 1; i >= 0 ; i--)
             {
-                Console.Write(ch + " ");
+                Console.WriteLine(name[i] + " "); 
             }
-
-            Console.WriteLine("Последняя буква вашего именни: {0}",name[name.Length - 1]);
 
             Console.ReadKey();
         }
