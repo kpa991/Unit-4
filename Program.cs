@@ -4,17 +4,25 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите свое имя");
-            var name = Console.ReadLine();
+            int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
 
-            Console.WriteLine("Ваше имя по букввам: ");
-
-            for ( int i = name.Length - 1; i >= 0 ; i--)
+            for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
             {
-                Console.WriteLine(name[i] + " "); 
+                for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
+                    Console.Write(array[i, k] + " ");
+
+                Console.WriteLine();
             }
 
-            Console.ReadKey();
+            Console.WriteLine();
+
+            for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
+            {
+                for (int k = 0; k < array.GetUpperBound(0) + 1; k++)
+                    Console.Write(array[k, i] + " ");
+
+                Console.WriteLine();
+            }
         }
     }
 }
