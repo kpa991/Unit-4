@@ -4,11 +4,17 @@
     {
         static void Main(string[] args)
         {
-            int A;
-            int B;
-            double Y;
-            double X;
-            bool C = (A < B) | (X > Y);
+            var a = 6;
+            var b = 7;
+
+            if (!(a == b))
+            {
+                Console.WriteLine("Условие истинно");
+            }
+            else
+            {
+                Console.WriteLine("Условие ложно");
+            }
 
         }
     }
