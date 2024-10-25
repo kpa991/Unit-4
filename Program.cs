@@ -4,9 +4,11 @@
     {
         static void Main(string[] args)
         {
-            string A;
-            string B;
-            bool C = A != B;
+            int A;
+            int B;
+            double Y;
+            double X;
+            bool C = (A < B) | (X > Y);
 
         }
     }
