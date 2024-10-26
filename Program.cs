@@ -6,6 +6,7 @@
         {
             var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
             int temp;
+            int sum =0;
 
             Console.Write("начальный массив: ");
             for (int i =0; i < arr.Length; i++)
@@ -34,6 +35,12 @@
             {
                 Console.Write(arr[i]+ " ");
             }
+            Console.WriteLine();
+            for (int i = 0;i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+            Console.WriteLine("Сумма всех элементов массива: " + sum);
 
         }
     }
