@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Microsoft.VisualBasic;
+using System.Linq.Expressions;
 
 namespace Unit_4
 {
@@ -7,44 +8,21 @@ namespace Unit_4
         static void Main(string[] args)
         {
 
-            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
-            int temp = 0;
+            (string name, int age, DateTime birthdate) anketa;
 
-            Console.WriteLine("Начальный массив:");
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.Write(arr[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
+            Console.Write("Введите ваше имя: ");
+            anketa.name = Console.ReadLine();
+            // string name = Console.ReadLine();
+            Console.Write("Введите ваш возраст: ");
+            anketa.age = Convert.ToInt32(Console.ReadLine());
+            // byte age = (byte)int.Parse(Console.ReadLine());
+            Console.Write("Введите вашу дату рождения по примеру \"дд.мм.гггг \": ");
+            anketa.birthdate = Convert.ToDateTime(Console.ReadLine());
+            /* string date = Console.ReadLine();
+            DateTime birthdate = DateTime.Parse(date); */
+            Console.WriteLine("Ваше имя {0}, ваш возраст {1} и ваша дата рождения {2}", anketa.name, anketa.age, anketa.birthdate.ToString("dd.MM.yyyy"));
+            // Console.WriteLine("Your name is {0}, your age is {1} and your birthdate is " + birthdate.ToString("dd.MM.yyyy"), name, age);
 
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    for (int k = j + 1; k < arr.GetLength(1); k++)
-                    {
-                        if (arr[i, j] > arr[i, k])
-                        {
-                            temp = arr[i, j];
-                            arr[i, j] = arr[i, k];
-                            arr[i, k] = temp;
-                        }
-                    }
-                }
-            }
-
-            Console.WriteLine("Отсортированный массив:");
-            for (int i = 0;i < arr.GetLength(0); i++)
-            {
-                for(int j = 0;j < arr.GetLength(1); j++)
-                {
-                    Console.Write(arr[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
         }
     }
 }
