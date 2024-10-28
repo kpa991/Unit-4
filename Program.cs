@@ -4,43 +4,21 @@
     {
         static void Main(string[] args)
         {
-            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-            int temp;
-            int sum =0;
+            int[][] array = new int[3][];
+            array[0] = new int[] { 1, 2 };
+            array[1] = new int[] {1, 2, 3 };
+            array[2] = new int[] {1, 2, 3, 4, 5 };
 
-            Console.Write("начальный массив: ");
-            for (int i =0; i < arr.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.Write(arr[i] + " ");  
-            }
-            
-            Console.WriteLine();
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = i + 1; j < arr.Length; j++)
+                for (int j = 0; j < array[i].Length; j++)
                 {
-                    if (arr[i] > arr[j])
-                    {
-                        temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
-                    }
+                    Console.Write(array[i][j]);
                 }
 
+                Console.WriteLine();
             }
-
-            Console.Write("От сортированный массив: ");
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i]+ " ");
-            }
-            Console.WriteLine();
-            for (int i = 0;i < arr.Length; i++)
-            {
-                sum += arr[i];
-            }
-            Console.WriteLine("Сумма всех элементов массива: " + sum);
 
         }
     }
