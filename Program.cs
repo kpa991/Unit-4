@@ -8,21 +8,45 @@ namespace Unit_4
         static void Main(string[] args)
         {
 
-            (string name, int age, DateTime birthdate) anketa;
+            (string FirstName, string SurName, string Login, int LoginLenght, bool HasPet, double Age, string[] LoveColors) User;
 
-            Console.Write("Введите ваше имя: ");
-            anketa.name = Console.ReadLine();
-            // string name = Console.ReadLine();
-            Console.Write("Введите ваш возраст: ");
-            anketa.age = Convert.ToInt32(Console.ReadLine());
-            // byte age = (byte)int.Parse(Console.ReadLine());
-            Console.Write("Введите вашу дату рождения по примеру \"дд.мм.гггг \": ");
-            anketa.birthdate = Convert.ToDateTime(Console.ReadLine());
-            /* string date = Console.ReadLine();
-            DateTime birthdate = DateTime.Parse(date); */
-            Console.WriteLine("Ваше имя {0}, ваш возраст {1} и ваша дата рождения {2}", anketa.name, anketa.age, anketa.birthdate.ToString("dd.MM.yyyy"));
-            // Console.WriteLine("Your name is {0}, your age is {1} and your birthdate is " + birthdate.ToString("dd.MM.yyyy"), name, age);
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Введите ваше имя: ");
+                User.FirstName = Console.ReadLine();
 
+                Console.Write("Введите вашу фамилию: ");
+                User.SurName = Console.ReadLine();
+
+                Console.Write("Введите ваш логин: ");
+                User.Login = Console.ReadLine();
+
+                User.LoginLenght = User.Login.Length;
+
+                Console.WriteLine("Есть ли у вас животные? Да или Нет");
+                var answer = Console.ReadLine();
+                if (answer == "Да")
+                {
+                    User.HasPet = true;
+                }
+                else
+                {
+                    User.HasPet = false;
+                }
+
+                Console.Write("Введите ваш возраст: ");
+                User.Age = Convert.ToDouble(Console.ReadLine());
+
+                User.LoveColors = new string[3];
+                Console.WriteLine("Введите три любимых цвета:");
+
+                for (int k = 0; k < User.LoveColors.Length; k++)
+                {
+                    User.LoveColors[k] = Console.ReadLine();
+                }
+            }
+
+            
         }
     }
 }
