@@ -20,6 +20,15 @@
                 Console.WriteLine();
             }
 
+            foreach (var num in array)
+            {
+                foreach (var item in num)
+                {
+                    Console.Write(item + " ");
+                }
+            }
+
+
         }
     }
 }
