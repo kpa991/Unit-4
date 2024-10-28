@@ -7,18 +7,21 @@ namespace Unit_4
         static void Main(string[] args)
         {
 
-            int[] array = { 1, 2, -3, 4, -5, 6, -7, 8, - 9};
+            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
             int Negative = 0;
             int Positive = 0;
 
-            foreach (int i in array)
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                if (i < 0)
-                { 
-                    Negative ++;
-                } else 
-                { 
-                    Positive ++;
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (arr[i, j] < 0)
+                    {
+                        Negative++;
+                    }else
+                    {
+                        Positive++;
+                    }
                 }
             }
             
