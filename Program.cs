@@ -8,37 +8,43 @@ namespace Unit_4
         {
 
             int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
-            int Negative = 0;
-            int Positive = 0;
+            int temp = 0;
+
+            Console.WriteLine("Начальный массив:");
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
 
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    if (arr[i, j] < 0)
+                    for (int k = j + 1; k < arr.GetLength(1); k++)
                     {
-                        Negative++;
-                    }else
-                    {
-                        Positive++;
+                        if (arr[i, j] > arr[i, k])
+                        {
+                            temp = arr[i, j];
+                            arr[i, j] = arr[i, k];
+                            arr[i, k] = temp;
+                        }
                     }
                 }
             }
-            
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Кол-во положительных чисел в массиве: " + Positive);
-            Console.WriteLine();
 
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("Кол-во отрицательных чисел в массиве: " + Negative);
-            Console.WriteLine();
-
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-
-            Console.ReadKey();
+            Console.WriteLine("Отсортированный массив:");
+            for (int i = 0;i < arr.GetLength(0); i++)
+            {
+                for(int j = 0;j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
