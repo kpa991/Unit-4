@@ -1,34 +1,41 @@
-﻿namespace Unit_4
+﻿using System.Linq.Expressions;
+
+namespace Unit_4
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[][] array = new int[3][];
-            array[0] = new int[] { 1, 2 };
-            array[1] = new int[] {1, 2, 3 };
-            array[2] = new int[] {1, 2, 3, 4, 5 };
 
-            for (int i = 0; i < array.Length; i++)
+            int[] array = { 1, 2, -3, 4, -5, 6, -7, 8, - 9};
+            int Negative = 0;
+            int Positive = 0;
+
+            foreach (int i in array)
             {
-
-                for (int j = 0; j < array[i].Length; j++)
-                {
-                    Console.Write(array[i][j]);
-                }
-
-                Console.WriteLine();
-            }
-
-            foreach (var num in array)
-            {
-                foreach (var item in num)
-                {
-                    Console.Write(item + " ");
+                if (i < 0)
+                { 
+                    Negative ++;
+                } else 
+                { 
+                    Positive ++;
                 }
             }
+            
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Кол-во положительных чисел в массиве: " + Positive);
+            Console.WriteLine();
 
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Кол-во отрицательных чисел в массиве: " + Negative);
+            Console.WriteLine();
 
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.ReadKey();
         }
     }
 }
